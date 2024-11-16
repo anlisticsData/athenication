@@ -17,6 +17,8 @@ class TokenEntity implements IToArray
 
     public function __construct($parameters = null)
     {
+        $this->created=date("Y-m-d H:m:i");
+        $this->expired=strtotime(date("Y-m-d H:m:i"));
         if (!is_null($parameters)) {
             foreach ($this->fillable as $index => $value) {
                 if (isset($parameters[$value])) {

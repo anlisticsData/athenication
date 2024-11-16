@@ -24,7 +24,7 @@ class Authentication implements IMiddleware
                 throw new Exception("token file not found.", 500);
             }
             if (is_null($permissionsSystem) || is_null($permissionsUsers) || !isset($headers['Authorization'])) {
-                throw new Exception("failed when trying to log in or authorize.", 401);
+                throw new Exception("#3-failed when trying to log in or authorize.", 401);
             }
             $token = str_replace("Bearer ", "", $headers['Authorization']);
         }else{
@@ -41,13 +41,13 @@ class Authentication implements IMiddleware
             }
         }
         if ($isValidAcess == 0) {
-            throw new Exception("failed when trying to log in or authorize.", 401);
+            throw new Exception("#1-failed when trying to log in or authorize.", 401);
         }
         if (!isset($tokenDecode["exp"]) || !isset($tokenDecode["user"]) || !isset($tokenDecode["level"])) {
             throw new Exception("poorly formatted token.", 401);
         }
         if ((strtotime(date("Y-m-d H:m:i")) - $tokenDecode['exp']) > $exp) {
-            throw new Exception("failed when trying to log in or authorize.", 401);
+            throw new Exception("#2-failed token expired when trying to log in or authorize.", 401);
         }
         return $tokenDecode;
     }

@@ -1,0 +1,8 @@
+POST http://localhost/development/athenication/demo.php HTTP/1.1
+Content-Type: application/xml
+Authorization:Bearer 1f93eaf1-08a6-4a52-bc3d-f6770cc758bd
+###
+
+GET http://localhost/development/athenication/demo.php HTTP/1.1
+Content-Type: application/xml
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyLCJ1c2VyIjoxLCJsZXZlbCI6MSwiZXhwIjoxNzMxNzUxODg4fQ.-3VmsZlKD7x1qcCXvfJ1XRgncYb9HcDJSDQf7AIU1OA
