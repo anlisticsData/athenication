@@ -1,0 +1,12 @@
+{
+    "name": "analisticsdata/athenication",
+    "autoload": {
+        "psr-4": {
+            "Commoms\\": "Commoms/",
+            "Interfaces\\": "Interfaces/",
+            "Middlewares\\": "Middlewares/"
+            
+        }
+    },
+    "require": {}
+}
