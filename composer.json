@@ -1,5 +1,5 @@
 {
-    "name": "analisticsdata/athenication",
+    "name": "analisticsdataathenication/athenication",
     "autoload": {
         "psr-4": {
             "Commoms\\": "Commoms/",
