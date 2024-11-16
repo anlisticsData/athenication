@@ -18,15 +18,17 @@ class Authentication implements IMiddleware
 
         if (is_null($tokenDb)) {
             foreach (getallheaders() as $index => $value) {
-                $headers[$index] = $value;
+                $headers[strtolower($index)] = $value;
             }
+           
             if (!isset($parsed["auth"]) || strlen(trim($parsed["auth"])) == 0) {
                 throw new Exception("token file not found.", 500);
             }
-            if (is_null($permissionsSystem) || is_null($permissionsUsers) || !isset($headers['Authorization'])) {
+            if (is_null($permissionsSystem) || is_null($permissionsUsers) || !isset($headers['authorization'])) {
                 throw new Exception("#3-failed when trying to log in or authorize.", 401);
             }
-            $token = str_replace("Bearer ", "", $headers['Authorization']);
+            $token = str_replace("Bearer ", "", $headers['authorization']);
+
         }else{
             $token = str_replace("Bearer ", "", $tokenDb);
         }

@@ -1,8 +1,20 @@
-POST http://localhost/development/athenication/demo.php HTTP/1.1
-Content-Type: application/xml
-Authorization:Bearer 1f93eaf1-08a6-4a52-bc3d-f6770cc758bd
+POST http://localhost/development/athenication/demo.php?token=1 HTTP/1.1
+content-type: application/json
+
+{
+    "email": "sample@gmail.com",
+    "password": "1234"
+}
+###
+GET http://localhost/development/athenication/demo.php?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhbXBsZUBnbWFpbC5jb20iLCJuYW1lIjoic2FtcGxlQGdtYWlsLmNvbSIsInVzZXIiOjEsImxldmVsIjoxLCJwZXJtaXNpb25zIjpbInZpZXdfZGFzaGJvYXJkIl0sImNyZWF0ZWRfYXQiOiIyMDI0LTExLTE2IDIxOjExOjAxIiwiZXhwIjoxNzMxNzg3ODYxfQ.60_4inrIhknu0j805MtHHfERT_a7fmXcIGE5JuiaR9U HTTP/1.1
+ 
 ###
 
-GET http://localhost/development/athenication/demo.php HTTP/1.1
-Content-Type: application/xml
-Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyLCJ1c2VyIjoxLCJsZXZlbCI6MSwiZXhwIjoxNzMxNzUxODg4fQ.-3VmsZlKD7x1qcCXvfJ1XRgncYb9HcDJSDQf7AIU1OA
+
+POST http://localhost/development/athenication/demo.php
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhbXBsZUBnbWFpbC5jb20iLCJuYW1lIjoic2FtcGxlQGdtYWlsLmNvbSIsInVzZXIiOjEsImxldmVsIjoxLCJwZXJtaXNpb25zIjpbInZpZXdfZGFzaGJvYXJkIl0sImNyZWF0ZWRfYXQiOiIyMDI0LTExLTE2IDIxOjExOjAxIiwiZXhwIjoxNzMxNzg3ODYxfQ.60_4inrIhknu0j805MtHHfERT_a7fmXcIGE5JuiaR9U
+
+{
+    "A":1
+}
